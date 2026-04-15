@@ -1,0 +1,23 @@
+CREATE DATABASE company;
+USE company;
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(50),
+    salary DECIMAL(10,2),
+    email VARCHAR(100)
+);
+
+INSERT INTO employees VALUES
+(101, 'Rahul Sharma', 'Software Engineer', 65000.00, 'rahul@company.com'),
+(102, 'Priya Singh', 'HR Manager', 75000.00, 'priya@company.com');
+
+CREATE TABLE leaves (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_id INT,
+    type VARCHAR(50),
+    days INT,
+    start_date DATE,
+    status ENUM('Pending', 'Approved') DEFAULT 'Pending'
+);
